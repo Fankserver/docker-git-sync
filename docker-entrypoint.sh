@@ -1,10 +1,10 @@
-#!/bin/bash
+#!/bin/sh
 set -e
 
 cd /mnt
 git clone --bare $ORIGIN_URL
 cd *
 git remote add --mirror=push mirror $MIRROR_URL
-git fetch mirror --all
+git fetch mirror
 
-cron -f
+crond -f
